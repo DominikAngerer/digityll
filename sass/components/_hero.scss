@@ -1,0 +1,23 @@
+.hero {
+    position: relative;
+    height: 70vh;
+    padding: 0;
+    &.slim {
+        height: 40vh;
+    }
+    &.max {
+        height: 90vh;
+    }
+    .container {
+        padding: 100px 0;
+    }
+    .background {
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+}

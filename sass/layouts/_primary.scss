@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  main {
+    display: block;
+    background-color: #ffffff;
+    .page {
+      position: relative;
+      z-index: 99;
+    }
+  }
+}

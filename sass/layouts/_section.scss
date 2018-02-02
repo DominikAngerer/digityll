@@ -1,0 +1,25 @@
+section,
+.section {
+  padding: 50px 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  &.parallax {
+    padding: 150px 0;
+    // background-position: 0 -1000px;
+    // background-repeat: none;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media all and (min-width: 600px) {
+  &.parallax {
+    padding: 300px 0;
+  }
+}

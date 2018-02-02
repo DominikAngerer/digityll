@@ -1,0 +1,38 @@
+{
+  "name": "Digityll-Public-Website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "handlebars-helper-equal": "^1.0.0",
+    "marked": "^0.3.6",
+    "nodemon": "^1.11.0",
+    "postcss-reporter": "^5.0.0",
+    "postcss-scss": "^1.0.2",
+    "storyblok-js-client": "^1.0.4",
+    "stylelint": "^8.1.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "http-auth": "^3.2.3"
+  }
+}

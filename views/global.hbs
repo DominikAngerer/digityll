@@ -1,0 +1,27 @@
+{{{ _editable }}}
+{{#if story.content.mainnav_displayed }}
+    <header class="theme-menu-wrapper menu-style-two">
+        <div class="header-wrapper">
+            <div class="container">
+                <div class="logo float-left tran4s"><a href="/" title="Home"><img src="{{ global.logo }}" alt="{{ global.company_name }}"></a></div>
+                <nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav">
+                            {{#each global.navigation_links}}
+                                {{> (lookup . 'component') }}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+{{/if}}

@@ -1,0 +1,16 @@
+{{{ _editable }}}
+<li class="{{#if has_sublinks}}dropdown-holder {{/if}}menu-list">
+    <a href="{{#ifEquals name "home"}}/{{else}}{{ url href }}{{/ifEquals}}" class="{{ class }}" id="{{ id }}" title="{{ title }}" target="{{ target }}">{{ name }}</a>
+    {{#if has_sublinks}}
+        <ul class="sub-menu">
+            <li class="dropdown-holder">
+                <a href="blog-v3.html">Blog Full Width</a>
+                <ul class="second-sub-menu">
+                    <li>
+                        <a href="blog-details.html">Blog details</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    {{/if}}
+</li>

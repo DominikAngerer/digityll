@@ -1,0 +1,143 @@
+$navcolor: $blue;
+
+header,
+.header {
+    position: fixed;
+    z-index: 1050;
+    width: 100%;
+    .menu {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 25px;
+        right: 25px;
+        top: 25px;
+    }
+
+    .menu-bg {
+        @extend .menu;
+
+        background-color: $navcolor;
+        pointer-events: none;
+        transition: 0.3s;
+        right: 50px;
+        top: 50px;
+        transform: translate3d(50%, -50%, 0);
+        transform-origin: center center;
+        &.fs {
+            transform: translate3d(50%, -50%, 0);
+            width: 300vw;
+            height: 700vw;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                opacity: 0.1;
+            }
+        }
+    }
+
+    .menu-burger {
+        @extend .menu;
+
+        z-index: 10;
+        color: white;
+        padding-top: 0;
+        -webkit-user-select: none;
+        cursor: pointer;
+        transition: 0.4s;
+        transform-origin: center;
+        &.fs {
+            transform: rotate(-180deg) translateY(0);
+        }
+    }
+
+    .menu-items {
+        z-index: 9;
+        position: fixed;
+        width: 100%;
+        opacity: 0;
+        transition: 0.4s;
+        transform: translateY(-100%);
+        pointer-events: none;
+        &.fs {
+            transform: translateY(0);
+            pointer-events: auto;
+            opacity: 1;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        .menu-links {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: darken($navcolor, 5%);
+            width: 100%;
+            padding-top: 50px;
+
+            @include bp(md) {
+                width: 40%;
+                padding-top: 0;
+            }
+
+            .nav,
+            .contact-social {
+                padding: 0.5em;
+
+                @include bp(md) {
+                    padding: 2em;
+                }
+
+                div {
+                    padding: 0.5em;
+
+                    @include bp(md) {
+                        padding: 1em;
+                    }
+
+                    a {
+                        color: $white;
+                        font-size: 2rem;
+
+                        @include bp(md) {
+                            font-size: 3rem;
+                        }
+
+                        span {
+                            display: block;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+            .contact-social {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: darken($navcolor, 7%);
+                div {
+                    span {
+                        color: $light;
+                    }
+                    a {
+                        &:hover {
+                            &::before {
+                                transform: scale(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

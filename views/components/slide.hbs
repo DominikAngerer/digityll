@@ -1,0 +1,20 @@
+<div data-src="{{ background_image }}">
+  <div class="camera_caption">
+    <div class="container">
+      <h5 class="wow fadeIn{{ subtext_fadein_from }} animated">{{ subtext }}</h5>
+      <h1 class="wow fadeIn{{ heading_fadein_from }} animated" data-wow-delay="{{ heading_wow_delay }}">{{ heading }}</h1>
+      {{#each cta}}
+        <div>{{> (lookup . 'component') }}</div>
+      {{/each}}
+      {{#if has_video}}
+        <div class="play-option wow fadeIn{{ video_fadein_from }} animated" data-wow-delay="{{ video_wow_delay }}">
+          <div class="watch-video">
+            <h6>{{ video_subtext }}</h6>
+            <h4>{{ video_heading }}</h4>
+            <a data-fancybox href="{{ video_url }}" class="tran3s"><i class="fa fa-play" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
