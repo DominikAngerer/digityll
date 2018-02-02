@@ -21,9 +21,13 @@ let Storyblok = new StoryblokClient({
   accessToken: 'Ss3c7ksK7xEy9NMHBIF6pAtt'
 });
 
-Storyblok.get(`links`).then((response) => {
-  global.storylinks = response.body.links
-});
+// added "cdn/" infront off the API paths
+Storyblok.get(`cdn/links`).then((response) => {
+  global.storylinks = response.data.links
+}).catch((error) => {  // <-- mnissing catch 
+  // res.send(error);
+  console.log( error.stack );
+});;
 
 
 app.get('/clear_cache', function(req, res) {
@@ -39,32 +43,34 @@ app.get('/*', function(req, res) {
   path = path == '/' ? 'home' : path;
 
   Storyblok
-    .get(`stories/global`, {
+    .get(`cdn/stories/global`, {
       version: req.query._storyblok ? 'draft': 'published'
     })
     .then((globalResponse) => {
-      let globalData = globalResponse.body.story.content;
+      let globalData = globalResponse.data.story.content;
 
       Storyblok
-        .get(`stories/${path}`, {
+        .get(`cdn/stories/${path}`, {
           version: req.query._storyblok ? 'draft': 'published'
         })
 
         .then((response) => {
-          res.render(response.body.story.content.component, {
-            story: response.body.story,
+          res.render(response.data.story.content.component, {
+            story: response.data.story,
             global: globalData
           });
         })
 
         .catch((error) => {
-          res.send(error);
+          // res.send(error);
+          console.log( error.stack );
         });
 
       })
   
     .catch((error) => {
-      res.send(error);
+      // res.send(error);
+      console.log( error.stack );
     });
 });
 
