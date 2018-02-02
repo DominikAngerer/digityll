@@ -18,7 +18,7 @@ app.set('view engine', '.hbs');
 app.set('views', 'views');
 
 let Storyblok = new StoryblokClient({
-  privateToken: 'Ss3c7ksK7xEy9NMHBIF6pAtt'
+  accessToken: 'Ss3c7ksK7xEy9NMHBIF6pAtt'
 });
 
 Storyblok.get(`links`).then((response) => {
